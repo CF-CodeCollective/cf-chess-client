@@ -1,0 +1,15 @@
+syntax = "proto3";
+package grpc;
+
+// Needs to be adjusted
+service Greeter {
+  rpc SayHello (MovesRequest) returns (MovesReply) {}
+}
+
+message MovesRequest {
+  string name = 1;
+}
+
+message MovesReply {
+  string message = 1;
+}
