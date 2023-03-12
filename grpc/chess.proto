@@ -3,7 +3,7 @@ package grpc;
 
 // Needs to be adjusted
 service Greeter {
-  rpc SayHello (MovesRequest) returns (MovesReply) {}
+  rpc GrabPossibleMoves (MovesRequest) returns (MovesReply) {}
 }
 
 message MovesRequest {
