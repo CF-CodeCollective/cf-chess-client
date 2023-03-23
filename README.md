@@ -4,6 +4,7 @@
 - John Harris
 - Justin Fanning
 - Jason Tyler
+- Kyle Hodge
 
 ### Background Info
 This project is one of two microservices, one is the GUI (what you're reading right now)
