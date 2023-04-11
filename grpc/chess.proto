@@ -2,7 +2,7 @@ syntax = "proto3";
 package grpc;
 
 // Needs to be adjusted
-service Greeter {
+service ChessMoves {
   rpc GrabPossibleMoves (MovesRequest) returns (MovesReply) {}
 }
 
