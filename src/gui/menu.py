@@ -15,11 +15,11 @@ class Window(QMainWindow):
 
     def UiComponents(self):
         # creating a push button
-        button = QPushButton("Click To Play", self)
+        startButton = QPushButton("Click To Play", self)
         # setting geometry of button
-        button.setGeometry(200, 150, 100, 30)
+        startButton.setGeometry(200, 150, 100, 30)
         # adding action to a button
-        button.clicked.connect(self.clickAction)
+        startButton.clicked.connect(self.clickAction)
 
     def clickAction(self):
         # printing pressed
