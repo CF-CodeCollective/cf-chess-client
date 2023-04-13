@@ -13,21 +13,14 @@ class Window(QMainWindow):
         logInMenu = menuBar.addMenu("&Log In")
         helpMenu = menuBar.addMenu("&Help")
 
-    def UiComponents(self):
+    def uiComponents(self):
         # creating a push button
-<<<<<<< HEAD
         startButton = QPushButton("Click To Play", self)
         # setting geometry of button
-        startButton.setGeometry(200, 150, 100, 30)
+        startButton.setGeometry(50, 300, 300, 60)
         # adding action to a button
         startButton.clicked.connect(self.clickAction)
-=======
-        button = QPushButton("Click To Play", self)
-        # setting geometry of button
-        button.setGeometry(200, 150, 100, 30)
-        # adding action to a button
-        button.clicked.connect(self.clickAction)
->>>>>>> origin/master
+
 
     def clickAction(self):
         # printing pressed
@@ -44,7 +37,7 @@ class Window(QMainWindow):
         self.centralWidget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         self.setCentralWidget(self.centralWidget)
         self.createMenuBar()
-        self.UiComponents()
+        self.uiComponents()
 
 
 # Creates the instance of the window and menu.
