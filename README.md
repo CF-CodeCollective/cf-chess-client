@@ -19,3 +19,7 @@ and the other is the AI that will probably be through Google Codelabs.
 - Protocol Buffers
 - Tensorflow
 - PyQt5
+
+### Technical Documentation
+Project starts in `main.py`, a dictionary is created that allows switches between
+screens to happen. After it opens the `menu.py` file
