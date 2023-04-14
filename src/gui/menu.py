@@ -27,9 +27,9 @@ class Window(QMainWindow):
         # setting geometry of button
         startButton.setGeometry(50, 300, 300, 60)
         # adding action to a button
-        startButton.clicked.connect(self.clickAction)
+        startButton.clicked.connect(self.buttonClick)
 
-    def clickAction(self):
+    def buttonClick(self):
         # printing pressed
         # Need to add link to start main game pointing to a print statement till I find a way to launch. -BF
         print("Player vs Player selected")
