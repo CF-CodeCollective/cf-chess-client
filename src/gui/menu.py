@@ -27,7 +27,7 @@ class Window(QMainWindow):
         btn_pvp.clicked.connect(self.clickActionPVP)
 
         # Create "Player vs AI" button
-        btn_pva = QPushButton("Player vs AI", self)
+        btn_pva = QPushButton("Player vs Computer", self)
         btn_pva.setGeometry(250, 250, 300, 50)
         btn_pva.clicked.connect(self.clickActionPVAI)
 
@@ -41,7 +41,7 @@ class Window(QMainWindow):
     def clickActionPVAI(self):
         # printing pressed
         # Need to add link to start main game pointing to a print statement till I find a way to launch. -BF
-        print("Player vs Player selected")
+        print("Player vs Computer selected")
         self.play_status = 2
         self.close()
 
