@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import sys
-
+from gui.game.application_view import BoardApplication
 
 class Window(QMainWindow):
     """Main Window."""
@@ -14,6 +14,7 @@ class Window(QMainWindow):
     Depending on what button you click it will change this numbers value
     '''
     play_status = -1
+    #front_wid = 1
 
     def createMenuBar(self):
         # Added Buttons here to try and make a more complete screen with options that could be used in the future
@@ -21,20 +22,34 @@ class Window(QMainWindow):
         logInMenu = menuBar.addMenu("&Log In")
         helpMenu = menuBar.addMenu("&Help")
 
-    def uiComponents(self):
-        # creating a push button
-        startButton = QPushButton("Player vs Player", self)
-        # setting geometry of button
-        startButton.setGeometry(50, 300, 300, 60)
-        # adding action to a button
-        startButton.clicked.connect(self.clickAction)
+    def createButtons(self):
+        # Create "Player vs Player" button
+        btn_pvp = QPushButton("Player vs Player", self)
+        btn_pvp.setGeometry(250, 150, 300, 50)
+        btn_pvp.clicked.connect(self.buttonActionPVP)
 
-    def clickAction(self):
+        # Create "Player vs AI" button
+        btn_pva = QPushButton("Player vs Computer", self)
+        btn_pva.setGeometry(250, 250, 300, 50)
+        btn_pva.clicked.connect(self.buttonActionPVAI)
+
+    def buttonActionPVP(self):
         # printing pressed
         # Need to add link to start main game pointing to a print statement till I find a way to launch. -BF
         print("Player vs Player selected")
         self.play_status = 1
-        self.close()
+        self.hide()
+        self.grid_app = BoardApplication()  # Create an instance of GridApplication from script 2
+        self.grid_app.show()  # Show the window created by script 2
+
+    def buttonActionPVAI(self):
+        # printing pressed
+        # Need to add link to start main game pointing to a print statement till I find a way to launch. -BF
+        print("Player vs Computer selected")
+        self.play_status = 2
+        self.hide()
+        self.grid_app = BoardApplication()  # Create an instance of GridApplication from script 2
+        self.grid_app.show()  # Show the window created by script 2
 
     def value(self):
         return self.play_status
@@ -45,11 +60,11 @@ class Window(QMainWindow):
         super().__init__(parent)
         self.setWindowTitle("Code Collective Chess Team")
         self.resize(800, 400)
-        self.centralWidget = QLabel("Welcome to The Chess Project!")
-        self.centralWidget.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-        self.setCentralWidget(self.centralWidget)
+        label = QLabel("Welcome to The Chess Project!", self)
+        label.setGeometry(0, 50, 800, 50)
+        label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         self.createMenuBar()
-        self.uiComponents()
+        self.createButtons()
 
 
 # Creates the instance of the window and menu.
