@@ -8,6 +8,6 @@ Will be worked on, but heres an example
 ```
 main.py creates a dictionary. This allows us to easily switch between playing
 a game and the main menu. The menu returns and integer based on what button is clicked.
-This in turn determines what the 
+This in turn determines what the... 
 
 ```
